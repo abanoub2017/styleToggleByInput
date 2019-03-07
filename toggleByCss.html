@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Toggle by Css</title>
+
+    <style>
+     body{
+         font-size: 35px;
+     }
+     .test1,.test2,.test3{
+         margin: 10px auto;
+         background-color: yellow;
+         height: 100px;
+         width: 100%;
+         text-align: center;
+     }
+     input[type="radio"],
+     input[type="checkbox"]{
+         display: none;
+     }
+     input[type="radio"]:checked + label + .test1,
+     input[type="checkbox"]:checked + label +  .test2 ,
+     input[type="checkbox"]:checked + label +  .test3{
+         background-color: green;
+     }
+     .label-text::before {
+         content: attr( data-text1)
+     }
+     input[type="radio"]:checked + .label-text::before,
+     input[type="checkbox"]:checked + .label-text::before{
+         content: attr(data-text2)
+     }
+     .fas.fa-times{
+         display: none;
+     }
+     input[type="checkbox"]:checked + .label-text>.fas.fa-check{
+         display: none;
+     }
+     input[type="checkbox"]:checked + .label-text>.fas.fa-times{
+         display: inline;
+     }
+    </style>
+</head>
+<body>
+<!-- Change One time -->
+<input type="radio"  id="change"> 
+<label for="change">Change Backgaorund Color to Green</label>
+<!-- Div Test  -->
+<div class="test1">Radio</div>
+<br>
+<hr>
+<!-- Toggle -->
+<input type="checkbox"  id="toggle">
+<label for="toggle">Change Backgaorund Color to Green</label>
+<!-- Div Test  -->
+<div class="test2">checkbox</div>
+<br>
+<hr>
+<!-- Chabge Lable and text -->
+<input type="checkbox"  id="changetext">
+<label 
+   class="label-text"
+   for="changetext"
+   data-text1="Static Text"
+   data-text2="Change Text"
+   ></label>
+<!-- Div Test  -->
+<div class="test3">change Color and Text label</div>
+<br>
+<hr>
+<!-- Chabge Lable and text -->
+<input type="checkbox"  id="changeicon">
+
+<label 
+   class="label-text"
+   for="changeicon"
+   data-text1="Static Text"
+   data-text2="Change Text"
+   >
+   <i class="fas fa-times"></i>
+   <i class="fas fa-check"></i></label>
+<!-- Div Test  -->
+<div class="test3">change Color and Text label and Icon</div>
+<br>
+<hr>
+
+</body>
+</html>
